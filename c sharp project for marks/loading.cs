@@ -21,6 +21,7 @@ namespace c_sharp_project_for_marks
 
         private void loading_Load(object sender, EventArgs e)
         {
+            timer1.Start();
 
         }
 
@@ -28,6 +29,27 @@ namespace c_sharp_project_for_marks
         {
             new registration().Show();
             this.Hide();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(load.Value < 100)
+            {
+                load.Value += 1;
+                label2.Text = load.Value.ToString();
+            }
+
+            else
+            {
+                timer1.Stop();
+                new registration().Show();
+                this.Hide();
+            }
         }
     }
 }

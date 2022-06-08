@@ -330,29 +330,7 @@ namespace c_sharp_project_for_marks
         private void kryptonButton3_Click(object sender, EventArgs e)
         {
 
-            //string connectionstring = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=travelagencyDB;Integrated Security=True";
-
-            //SqlConnection con = new SqlConnection(connectionstring);
-
-            //con.Open();
-
-            //string firstname = txtfname.Text;
-            //string surname = txtsurname.Text;
-            //string depature = cmdeparture.Text;
-            //string distanation = cmdestination.Text;
-            //string accomadtion = cmaccom.Text;
-            //string flight_standerd = rdeconomy.Text + rdfirstclass.Text + rdstandard.Text;
-            //string total = txttotal.Text;
-
-
-            //string query = " insert into recipt_tb (fullname,depature,distanation,accomadtion,flight_standerd,total_price) values ('" + firstname + "\t" + surname + "', '" + depature + "', '" + distanation + "', '" + accomadtion + "','" + flight_standerd + "', '" + total + "')";
-
-            //SqlCommand cmd = new SqlCommand(query, con);
-            //cmd.ExecuteNonQuery();
-
-            //con.Close();
-
-            //MessageBox.Show("full detail kaga wa la xareyay");
+   
 
 
 
@@ -376,7 +354,7 @@ namespace c_sharp_project_for_marks
                 + "\n Tax Price:\t\t" + txttax.Text
                 + "\n total Price:\t\t" + txttotal.Text
                 + "\n-----------------------------------------------"
-                + "\n "
+                + "\n " + lbldate.Text + "\t\t\t" + lbltime.Text
                 + "\n------------------------------------------------"
                 + "\n\nWa ku mahad sanatahy \n\tDoorashada travel agency geena "
                 );
@@ -413,6 +391,21 @@ namespace c_sharp_project_for_marks
                 chcekedradio = "";
                 chcekedradio = "first class";
             }
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            DateTime iTime = DateTime.Now;
+            lbltime.Text = iTime.ToLongTimeString();
+
+            DateTime iDate = DateTime.Now;
+            lbldate.Text = iDate.ToLongDateString();
 
         }
     }

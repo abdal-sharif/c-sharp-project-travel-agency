@@ -23,5 +23,43 @@ namespace c_sharp_project_for_marks
         {
 
         }
+
+        private void kryptonButton2_Click(object sender, EventArgs e)
+        {
+            DialogResult iexit;
+
+            iexit = MessageBox.Show("ma rabtaa ina ka bxado ", "travel agency managment system",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (iexit == DialogResult.Yes)
+            {
+                /*     Application.Exit();*/
+                new registration().Show();
+                this.Hide();
+            }
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+      /*      string connectionstring = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=travelagencyDB;Integrated Security=True";
+
+            SqlConnection con = new SqlConnection(connectionstring);
+
+            con.Open();
+            string query = " select * from recipt_tb";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.ExecuteReader();
+
+
+   
+
+
+            con.Close();*/
+
+
+
+
+
+        }
     }
 }

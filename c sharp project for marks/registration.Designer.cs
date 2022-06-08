@@ -60,6 +60,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lbldate = new System.Windows.Forms.Label();
+            this.lbltime = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.reciptbtn = new Krypton.Toolkit.KryptonButton();
             this.rtrecipt = new System.Windows.Forms.RichTextBox();
@@ -89,6 +91,7 @@
             this.txttax = new Krypton.Toolkit.KryptonTextBox();
             this.txtsubtotal = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -486,6 +489,8 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.Control;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.lbldate);
+            this.panel4.Controls.Add(this.lbltime);
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.reciptbtn);
             this.panel4.Controls.Add(this.rtrecipt);
@@ -495,6 +500,28 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(363, 558);
             this.panel4.TabIndex = 3;
+            // 
+            // lbldate
+            // 
+            this.lbldate.BackColor = System.Drawing.Color.White;
+            this.lbldate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbldate.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbldate.Location = new System.Drawing.Point(250, 0);
+            this.lbldate.Name = "lbldate";
+            this.lbldate.Size = new System.Drawing.Size(99, 22);
+            this.lbldate.TabIndex = 23;
+            this.lbldate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbltime
+            // 
+            this.lbltime.BackColor = System.Drawing.Color.White;
+            this.lbltime.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbltime.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbltime.Location = new System.Drawing.Point(131, 0);
+            this.lbltime.Name = "lbltime";
+            this.lbltime.Size = new System.Drawing.Size(100, 23);
+            this.lbltime.TabIndex = 22;
+            this.lbltime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox4
             // 
@@ -529,8 +556,10 @@
             // 
             // rtrecipt
             // 
+            this.rtrecipt.BackColor = System.Drawing.Color.White;
             this.rtrecipt.Location = new System.Drawing.Point(12, 58);
             this.rtrecipt.Name = "rtrecipt";
+            this.rtrecipt.ReadOnly = true;
             this.rtrecipt.Size = new System.Drawing.Size(337, 452);
             this.rtrecipt.TabIndex = 20;
             this.rtrecipt.Text = "";
@@ -891,9 +920,9 @@
             // 
             // kryptonButton2
             // 
-            this.kryptonButton2.Location = new System.Drawing.Point(1119, 27);
+            this.kryptonButton2.Location = new System.Drawing.Point(1126, 37);
             this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(159, 25);
+            this.kryptonButton2.Size = new System.Drawing.Size(102, 25);
             this.kryptonButton2.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
             this.kryptonButton2.StateCommon.Back.Color2 = System.Drawing.Color.Gray;
             this.kryptonButton2.StateCommon.Border.Color1 = System.Drawing.SystemColors.Control;
@@ -906,6 +935,10 @@
             this.kryptonButton2.TabIndex = 5;
             this.kryptonButton2.Values.Text = "DB-View";
             this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton2_Click_1);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // registration
             // 
@@ -1014,5 +1047,8 @@
         private Label label18;
         private Label label19;
         private PictureBox pictureBox4;
+        private Label lbldate;
+        private Label lbltime;
+        private System.Windows.Forms.Timer timer1;
     }
 }
