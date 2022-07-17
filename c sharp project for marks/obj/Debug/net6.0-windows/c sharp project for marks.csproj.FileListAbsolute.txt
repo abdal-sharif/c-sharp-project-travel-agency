@@ -37,3 +37,4 @@ C:\Users\pc\Desktop\c# project\c sharp project for marks\c sharp project for mar
 C:\Users\pc\Desktop\c# project\c sharp project for marks\c sharp project for marks\bin\Debug\net6.0-windows\ComponentFactory.Krypton.Workspace.pdb
 C:\Users\pc\Desktop\c# project\c sharp project for marks\c sharp project for marks\obj\Debug\net6.0-windows\c_sharp_project_for_marks.Properties.Resources.resources
 C:\Users\pc\Desktop\c# project\c sharp project for marks\c sharp project for marks\obj\Debug\net6.0-windows\c_sharp_project_for_marks.database_view.resources
+C:\Users\pc\Desktop\c# project\c sharp project for marks\c sharp project for marks\obj\Debug\net6.0-windows\c_sharp_project_for_marks.sing_up.resources

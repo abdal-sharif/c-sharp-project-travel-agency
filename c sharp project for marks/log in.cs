@@ -56,5 +56,11 @@ namespace c_sharp_project_for_marks
         {
 
         }
+
+        private void kryptonButton4_Click(object sender, EventArgs e)
+        {
+            new sing_up().Show();
+            this.Hide();
+        }
     }
 }

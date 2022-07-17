@@ -30,44 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             this.kryptonPalette1 = new Krypton.Toolkit.KryptonPalette(this.components);
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
-            this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
+            this.txtsearch = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
-            this.txtdataview = new Krypton.Toolkit.KryptonDataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.txtdataview)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnsearch = new Krypton.Toolkit.KryptonButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // kryptonButton1
+            // txtsearch
             // 
-            this.kryptonButton1.Location = new System.Drawing.Point(285, 22);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(118, 25);
-            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.Navy;
-            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.Navy;
-            this.kryptonButton1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.txtsearch.Location = new System.Drawing.Point(260, 42);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(236, 24);
+            this.txtsearch.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.txtsearch.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.StateCommon.Border.Rounding = 12F;
-            this.kryptonButton1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(6, 0, 6, 3);
-            this.kryptonButton1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.kryptonButton1.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonButton1.TabIndex = 1;
-            this.kryptonButton1.Values.Text = "show data";
-            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
-            // 
-            // kryptonTextBox1
-            // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(21, 22);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(236, 24);
-            this.kryptonTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox1.StateCommon.Border.Rounding = 10F;
-            this.kryptonTextBox1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.kryptonTextBox1.TabIndex = 2;
+            this.txtsearch.StateCommon.Border.Rounding = 10F;
+            this.txtsearch.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.txtsearch.TabIndex = 2;
+            this.txtsearch.TextChanged += new System.EventHandler(this.kryptonTextBox1_TextChanged);
             // 
             // kryptonButton2
             // 
@@ -88,19 +70,36 @@
             this.kryptonButton2.Values.Text = "cancel";
             this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton2_Click);
             // 
-            // txtdataview
+            // dataGridView1
             // 
-            this.txtdataview.Location = new System.Drawing.Point(-2, 65);
-            this.txtdataview.Name = "txtdataview";
-            this.txtdataview.RowTemplate.Height = 25;
-            this.txtdataview.Size = new System.Drawing.Size(942, 395);
-            this.txtdataview.StateCommon.Background.Color1 = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtdataview.StateCommon.Background.Color2 = System.Drawing.Color.White;
-            this.txtdataview.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            this.txtdataview.StateCommon.DataCell.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(104, 83);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(705, 378);
+            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // btnsearch
+            // 
+            this.btnsearch.Location = new System.Drawing.Point(519, 42);
+            this.btnsearch.Name = "btnsearch";
+            this.btnsearch.Size = new System.Drawing.Size(90, 25);
+            this.btnsearch.StateCommon.Back.Color1 = System.Drawing.Color.Gray;
+            this.btnsearch.StateCommon.Back.Color2 = System.Drawing.Color.Gray;
+            this.btnsearch.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtdataview.TabIndex = 4;
+            this.btnsearch.StateCommon.Border.Rounding = 6F;
+            this.btnsearch.StateCommon.Content.Padding = new System.Windows.Forms.Padding(6, 0, 6, 3);
+            this.btnsearch.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnsearch.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnsearch.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnsearch.TabIndex = 5;
+            this.btnsearch.Values.Text = "search";
+            this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
             // 
             // database_view
             // 
@@ -108,10 +107,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(939, 493);
-            this.Controls.Add(this.txtdataview);
+            this.Controls.Add(this.btnsearch);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.kryptonButton2);
-            this.Controls.Add(this.kryptonTextBox1);
-            this.Controls.Add(this.kryptonButton1);
+            this.Controls.Add(this.txtsearch);
             this.Name = "database_view";
             this.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
             this.StateCommon.Back.Color2 = System.Drawing.SystemColors.Control;
@@ -123,7 +122,7 @@
             this.StateCommon.Header.Back.Color2 = System.Drawing.Color.White;
             this.Text = "database_view";
             this.Load += new System.EventHandler(this.database_view_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.txtdataview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,9 +131,9 @@
         #endregion
 
         private Krypton.Toolkit.KryptonPalette kryptonPalette1;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private Krypton.Toolkit.KryptonTextBox txtsearch;
         private Krypton.Toolkit.KryptonButton kryptonButton2;
-        private Krypton.Toolkit.KryptonDataGridView txtdataview;
+        private DataGridView dataGridView1;
+        private Krypton.Toolkit.KryptonButton btnsearch;
     }
 }

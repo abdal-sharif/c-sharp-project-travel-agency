@@ -21,6 +21,21 @@ namespace c_sharp_project_for_marks
 
         private void database_view_Load(object sender, EventArgs e)
         {
+            string connectionstring = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=travelagencyDB;Integrated Security=True";
+
+            SqlConnection con = new SqlConnection(connectionstring);
+            SqlCommand cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "select * from 	recipt_tb";
+            SqlDataAdapter da1 = new SqlDataAdapter(cmd);
+            DataSet ds1 = new DataSet();
+            da1.Fill(ds1);
+            cmd.ExecuteReader();
+            //MessageBox.Show(ds1.Tables[0].Rows[0][0].ToString);
+            dataGridView1.DataSource = ds1.Tables[0];
+
+            con.Close();
+
 
         }
 
@@ -33,32 +48,49 @@ namespace c_sharp_project_for_marks
 
             if (iexit == DialogResult.Yes)
             {
-                /*     Application.Exit();*/
                 new registration().Show();
                 this.Hide();
+
             }
+
+
+
+
         }
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
-      /*      string connectionstring = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=travelagencyDB;Integrated Security=True";
-
-            SqlConnection con = new SqlConnection(connectionstring);
-
-            con.Open();
-            string query = " select * from recipt_tb";
-            SqlCommand cmd = new SqlCommand(query, con);
-            cmd.ExecuteReader();
 
 
+
+
+
+        }
+        //on text chnage
+        private void kryptonTextBox1_TextChanged(object sender, EventArgs e)
+        {
    
 
+        }
+
+        private void btnsearch_Click(object sender, EventArgs e)
+        {
+          /*  String name = txtsearch.Text.Trim();
+            string connectionstring = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=travelagencyDB;Integrated Security=True";
+            SqlConnection con = new SqlConnection(connectionstring);
+            SqlCommand cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "select * from recipt_tb where fullname = '"+name+"'";
+            SqlDataAdapter da1 = new SqlDataAdapter(cmd);
+            DataSet ds1 = new DataSet();
+            da1.Fill(ds1);
+            dataGridView1.DataSource = ds1.Tables[0];
 
             con.Close();*/
+        }
 
-
-
-
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

@@ -73,6 +73,7 @@ namespace c_sharp_project_for_marks
         
             string depature = cmdeparture.Text;
             string distanation = cmdestination.Text;
+
             string accomadtion = cmaccom.Text;
             string flight_standerd = rdeconomy.Text + rdfirstclass.Text + rdstandard.Text;
             string total = txttotal.Text;
@@ -154,13 +155,14 @@ namespace c_sharp_project_for_marks
             itax airtax = new itax();
             double[] travelcost = new double[20];
             double[] taxcost = new double[20];
+          
             double total;
 
             if(cmdestination.Text == "hargeisa  5 days laascanood")
             {
-                travelcost[0] = travelprice.hargeisa +travelprice.airpot_tax + travelprice.air_miles + travelprice.lugage + travelprice.insurance ;
+                travelcost[0] = travelprice.hargeisa + travelprice.airpot_tax + travelprice.air_miles + travelprice.lugage + travelprice.insurance ;
                 taxcost[0] = airtax.iFindTax(travelcost[0]);
-                total = travelcost[0] + taxcost[0] ;
+                total = travelcost[0] + taxcost[0]  ;
 
                 txtsubtotal.Text = String.Format("{0:C}", travelcost[0]);
                 txttax.Text = String.Format("{0:C}", taxcost[0]);
@@ -351,12 +353,13 @@ namespace c_sharp_project_for_marks
                 + "\ntell:\t\t\t" + txttell.Text
                 + "\nemail:\t\t\t" + txtemail.Text
                 + "\ndestination:\t\t" + cmdestination.Text
+                + "\n-----------------------------------------------"
                 + "\n Tax Price:\t\t" + txttax.Text
                 + "\n total Price:\t\t" + txttotal.Text
                 + "\n-----------------------------------------------"
                 + "\n " + lbldate.Text + "\t\t\t" + lbltime.Text
                 + "\n------------------------------------------------"
-                + "\n\nWa ku mahad sanatahy \n\tDoorashada travel agency geena "
+                + "\n\nWa ku mahad sanatahy \t Doorashada travel agency geena "
                 );
         }
 
@@ -407,6 +410,11 @@ namespace c_sharp_project_for_marks
             DateTime iDate = DateTime.Now;
             lbldate.Text = iDate.ToLongDateString();
 
+        }
+
+        private void txtfname_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
